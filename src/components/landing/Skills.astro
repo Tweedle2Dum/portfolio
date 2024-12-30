@@ -1,0 +1,80 @@
+---
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+
+const skills = [
+  {
+    category: "Frontend",
+    description:
+      "Proficient in JavaScript, TypeScript, React.js, Next.js, and Tailwind CSS for building responsive and user-friendly interfaces.",
+  },
+  {
+    category: "Backend",
+    description:
+      "Experienced in Python, FastAPI, Node.js, Golang, Rust, and database management with MongoDB, SQL, and DynamoDB.",
+  },
+  {
+    category: "Cloud",
+    description:
+      "Experienced in AWS, Firebase, GCP, Fly and Vercel for deploying and managing applications.",
+  },
+  {
+    category: "System Programming",
+    description:
+      "Hands-on experience with low-level system programming, including building proxies and load balancers in Rust.",
+  },
+  {
+    category: "Miscellaneous",
+    description:
+      "Familiar with Redis, BullMQ, Puppeteer, and various UI and data visualization libraries.",
+  },
+];
+
+---
+
+<section id="skills" class="scroll-mt-12">
+  <Wrapper variant="base" class="py-8 2xl:py-16 border-t">
+    <div class="w-full grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div>
+        <Text
+          tag="h2"
+          variant="textMD"
+          class="font-medium text-zinc-800 dark:text-zinc-200"
+        >
+          Skills
+        </Text>
+        <Text tag="p" variant="textSM" class="font-medium text-zinc-500">
+          Technologies and tools I specialize in
+        </Text>
+      </div>
+      <div class="lg:col-span-2 divide-y gap-4 flex flex-col divide-black/5">
+        {
+          skills.map((skill, index) => (
+            <div class={`pb-4 group w-full animate-text`} data-delay={index * 100}>
+              <div class="flex items-center justify-between w-full">
+                <Text
+                  tag="h4"
+                  variant="textBase"
+                  class="text-zinc-80 group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white duration-300 flex items-center"
+                >
+                  {skill.category}
+                </Text>
+              </div>
+              <div class="text-zinc-500 text-pretty mt-2 dark:text-zinc-400">
+                <Text tag="p" variant="textSM">
+                  {skill.description}
+                </Text>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Wrapper>
+</section>
+<script type="module">
+  import { setupTextAnimation } from "../scripts/textReveal.js";
+  document.addEventListener("DOMContentLoaded", () => {
+    setupTextAnimation();
+  });
+</script>
