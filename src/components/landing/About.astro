@@ -1,10 +1,10 @@
 ---
-import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/foundations/containers/Wrapper.astro";
+import Text from "@/components/foundations/elements/Text.astro";
 ---
 
 <section id="about" class="scroll-mt-12">
-  <Wrapper variant="base" class="py-8">
+  <Wrapper variant="base" class="py-8 2xl:py-16 border-t">
     <div class="w-full grid grid-cols-1 gap-8 lg:grid-cols-3">
       <div>
         <Text
@@ -19,17 +19,19 @@ import Text from "@/components/fundations/elements/Text.astro";
           variant="textSM"
           class="font-medium text-zinc-500 animate-text dark:text-zinc-400"
         >
-          Welcome!
+            A bit about me
         </Text>
       </div>
       <div class="lg:col-span-2 gap-4 flex flex-col">
         <div class="text-zinc-500 dark:text-zinc-400">
           <Text tag="p" variant="textSM">
-            Welcome to my corner of the internet. I’m a passionate developer specializing in building scalable systems, crafting efficient solutions, and tackling complex challenges with innovative approaches. Whether it’s developing full-stack applications, diving into low-level system programming, or teaching the foundations of web development, my work is driven by a desire to create meaningful and impactful work.
+              I’m a developer who enjoys building systems that are fast, reliable, and designed with intention. My work spans from full-stack web applications to low-level system programming, with a focus on solving real problems through thoughtful engineering.
           </Text>
-
-          <Text tag="p" variant="textSM" class="mt-2">
-            Thank you for visiting! Let’s build something remarkable together.
+          <Text tag="p" variant="textSM">
+              I care about clean architecture, performance, and creating tools that genuinely help people work better. Whether I’m designing an internal tool, developing a product from scratch, or exploring how things work under the hood, I aim to deliver solutions that are both practical and robust. 
+          </Text>
+          <Text tag="p" variant="textXS" class="mt-2">
+              Thanks for stopping by — and if you have an idea or a project in mind, I’d love to help you bring it to life.
           </Text>
 
           <div class="border-zinc-200 border-t mt-8 pt-8 dark:border-zinc-700">

@@ -1,33 +1,41 @@
 ---
 import "../styles/global.css";
-import { AstroSeo } from "@astrolib/seo";
+import { SEO } from "astro-seo";
 ---
-
-<AstroSeo
+<SEO
   title="Tweedle2Dum | Portfolio"
   description="Showcasing my professional journey and work experiences."
   canonical="https://yourportfolio.com/"
+  
   openGraph={{
-    url: "https://yourportfolio.com/",
+    basic: {
+      title: "Tweedle2Dum | Portfolio",
+      type: "website",
+      image: "https://yourportfolio.com/og-image.jpg",
+      url: "https://yourportfolio.com/"
+    },
+    optional: {
+      description: "Explore my projects, skills, and achievements in web development and design.",
+      siteName: "Tweedle2Dum | Portfolio",
+      locale: "en_US"
+    },
+    image: {
+      width: 1200,
+      height: 630,
+      type: "image/jpeg",
+      alt: "Tweedle2Dum Portfolio Open Graph Image",
+      secureUrl: "https://yourportfolio.com/og-image.jpg"
+    }
+  }}
+
+  twitter={{
+    card: "summary_large_image",
+    site: "@yourTwitterHandle",
+    creator: "@yourTwitterHandle",
     title: "Tweedle2Dum | Portfolio",
     description: "Explore my projects, skills, and achievements in web development and design.",
-    images: [
-      {
-        url: "https://yourportfolio.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Your Name Portfolio Open Graph Image",
-        type: "image/jpeg",
-      },
-    ],
-    site_name: "Tweedle2Dum | Portfolio",
-    type: "website",
-    locale: "en_US",
-  }}
-  twitter={{
-    handle: "@yourTwitterHandle",
-    site: "@yourTwitterHandle",
-    cardType: "summary_large_image",
+    image: "https://yourportfolio.com/og-image.jpg",
+    imageAlt: "Tweedle2Dum Portfolio Open Graph Image"
   }}
 />
 

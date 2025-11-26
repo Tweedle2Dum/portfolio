@@ -6,12 +6,13 @@ import B from "../../images/b.png";
 import C from "../../images/c.png";
 import D from "../../images/d.png";
 import E from "../../images/e.png";
+
 const images = [
-  { src: A, alt: "Alt text for image A" },
-  { src: E, alt: "Alt text for image E" },
-  { src: B, alt: "Alt text for image B" },
-  { src: D, alt: "Alt text for image D" },
-  { src: C, alt: "Alt text for image C" },
+	{ src: A, alt: "Alt text for image A" },
+	{ src: E, alt: "Alt text for image E" },
+	{ src: B, alt: "Alt text for image B" },
+	{ src: D, alt: "Alt text for image D" },
+	{ src: C, alt: "Alt text for image C" },
 ];
 ---
 
@@ -21,7 +22,7 @@ const images = [
   <div class="marquee flex gap-2">
     {
       [...images, ...images].map((image, index) => (
-        <div class="marquee-item flex-none relative lg:aspect-[9/7] bg-zinc-100 dark:bg-zinc-800 shadow overflow-hidden w-100 rounded-lg lg:w-150 h-64 lg:h-96">
+        <div class="marquee-item flex-none relative lg:aspect-9/7 bg-zinc-100 dark:bg-zinc-800 shadow overflow-hidden w-100 rounded-lg lg:w-150 h-64 lg:h-96">
           <Image
             alt={image.alt}
             class="absolute inset-0 h-full w-full object-cover"
@@ -32,7 +33,7 @@ const images = [
     }
   </div>
 </div>
-<script type="module">
+<script is:inline type="module">
   // Function to initialize and run the marquee animation
   function setupMarquee() {
     // Select the marquee container element

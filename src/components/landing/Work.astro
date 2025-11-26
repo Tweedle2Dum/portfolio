@@ -1,27 +1,59 @@
 ---
-import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/foundations/containers/Wrapper.astro";
+import Text from "@/components/foundations/elements/Text.astro";
+import { Image } from "astro:assets";
 
 const roles = [
   {
     company: "Interacts AI",
-    title: "Full-Stack Developer",
-    years: "Aug 2024 — Present",
+    title: "Software Engineer",
     link: "https://www.interacts.ai",
+    logo: "/images/logo-one.png",
+    description:
+      "Interacts AI builds products around real-time AI agents. I led the end-to-end frontend development, shaping the platform experience and delivering features used by thousands of users.",
+  },
+  {
+    company: "Expert Hire",
+    title: "Software Engineer",
+    link: "https://experthire.in",
+    logo: "/images/logo-two.png",
+    description:
+      "Expert Hire provides AI-assisted interview and recruitment workflows. I owned the entire frontend, improving the candidate experience and supporting large-scale interview operations.",
   },
   {
     company: "Peritys",
-    title: "Frontend Developer",
-    years: "Mar 2024 — August",
+    title: "Software Engineer",
     link: "https://www.peritys.com",
+    logo: "/images/logo-three.png",
+    description:
+      "Peritys explored new AI-driven communication tools. I was the primary frontend developer, turning early concepts into functional product foundations the team could build on.",
   },
   {
     company: "TaskLabs",
-    title: "Full-Stack Developer",
-    years: "Aug 2023 — Dec 2023",
-    link: "https://www.tasklabs.app",
-  }
+    title: "Software Engineer",
+    link: "./tasklabs",
+    logo: "/images/logo-one.png",
+    description:
+      "TaskLabs was building an automation tool for teams. I developed the initial product version and supporting tools that enabled the team to move fast.",
+  },
+  {
+    company: "StackGuard",
+    title: "Software Engineer",
+    link: "https://www.stackguard.io",
+    logo: "/images/logo-two.png",
+    description:
+      "StackGuard works on monitoring and analyzing developer activity across cloud and GitHub environments. I built their initial data pipelines for the early POC, collecting and analyzing signals from AWS, GCP, Azure, and GitHub.",
+  },
+  {
+    company: "OutPilot AI",
+    title: "Software Engineer",
+    link: "#",
+    logo: "/images/logo-three.png",
+    description:
+      "OutPilot AI was a custom platform for automating lead generation, management, and qualification at scale. I worked with a small team to deliver the entire system, including workflow automation and integrations.",
+  },
 ];
+
 ---
 
 <section id="work" class="scroll-mt-12">
@@ -33,42 +65,52 @@ const roles = [
           variant="textMD"
           class="font-medium text-zinc-800 animate-text dark:text-zinc-200"
         >
-          Work Experience
+          Work
         </Text>
         <Text
           tag="p"
           variant="textSM"
           class="font-medium text-zinc-500 animate-text dark:text-zinc-400"
         >
-        My professional journey and contributions
-      </Text>
+          A few places where I've contributed to meaningful products.
+        </Text>
       </div>
+
       <div class="lg:col-span-2 divide-y gap-4 flex flex-col divide-black/5">
         {
           roles.map((role, index) => (
             <a
               href={role.link}
-              class={`pb-4 group w-full animate-text`}
+              class={`pb-6 group w-full animate-text`}
               data-delay={index * 100}
             >
               <div class="flex items-center justify-between w-full">
-                <Text
-                  tag="h4"
-                  variant="textBase"
-                  class="text-zinc-800 group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white duration-300 flex items-center"
-                >
-                  {role.company}
-                </Text>
-                <span class="ml-2 text-transparent group-hover:text-current duration-300">
-                  →
+                <div class="flex items-center gap-3">
+                    <span class="inline-block border p-2 rounded-full border-zinc-200 dark:border-zinc-700">
+                        <Image src={role.logo} alt={`${role.company} logo`} height={16} width={16} class="w-6 h-6 object-contain opacity-70 group-hover:opacity-100 duration-300" />
+                    </span>
+
+                  <Text
+                    tag="h4"
+                    variant="textBase"
+                    class="text-zinc-800 group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white duration-300"
+                  >
+                    {role.company}
+                  </Text>
+                </div>
+
+                <span class="ml-2 text-xs text-transparent hover:underline hover:underline-offset-8 group-hover:text-current dark:group-hover:text-white duration-300">
+                  Case Study →
                 </span>
               </div>
+
               <div class="text-zinc-500 text-balance mt-2 dark:text-zinc-400">
                 <Text tag="p" variant="textSM">
                   {role.title}
                 </Text>
-                <Text tag="p" variant="textSM" class="mt-8">
-                  {role.years}
+
+                <Text tag="p" variant="textSM" class="mt-4 leading-relaxed">
+                  {role.description}
                 </Text>
               </div>
             </a>
